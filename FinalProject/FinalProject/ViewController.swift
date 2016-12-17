@@ -45,21 +45,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard")
-        tapGesture.cancelsTouchesInView = false
+       tapGesture.cancelsTouchesInView = false
         UIView.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func hideKeyboard(){
+   func hideKeyboard(){
         NameTextField.resignFirstResponder()
         PasswordTextField.resignFirstResponder()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+   
 }
 
