@@ -38,11 +38,7 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
         self.PickerUI.dataSource = self
         self.PickerUI.delegate = self
         
-        /*ProfileImage.layer.borderWidth = 1
-        ProfileImage.layer.masksToBounds = false
-        ProfileImage.layer.borderColor = UIColor.black.cgColor
-        ProfileImage.layer.cornerRadius = ProfileImage.frame.height/2
-        ProfileImage.clipsToBounds = true*/
+        
         
         
         checkIfUserLoggedIn()
@@ -90,13 +86,7 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
     }
     
 
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, info: [String : AnyObject]?) {
-        print("working")
-        
-        print(info)
-        
-    }
+   
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
        print("cancelled")
@@ -109,18 +99,7 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
     func checkIfUserLoggedIn(){
         if FIRAuth.auth()?.currentUser?.uid != nil {
             
-            let storageRef = FIRStorage.storage().reference()
-            if let uploadData = UIImagePNGRepresentation(self.ProfileImage.image!){
-            storageRef.put(uploadData, metadata: nil, completion:
-                {(metadata,error) in
-                    
-                    if error != nil{
-                        print(error)
-                        return
-                    }
-                    print(metadata)
-            })
-            }
+          
             let uid = FIRAuth.auth()?.currentUser?.uid
             FIRDatabase.database().reference().child("user").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
                 
@@ -139,27 +118,72 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
                     if dictionary["summary"] as? String != nil{
                         self.Summary.text = dictionary["summary"] as? String
                     }
-
+                   
+                    if let i = dictionary["profileImageUrl"] as? String{
+                    
+                    if let url = NSURL(string: i){
+                        if let data = NSData(contentsOf: url as URL){
+                            print("sss")
+                           
+                            DispatchQueue.global(qos: .userInitiated).async{(self.ProfileImage.image = UIImage(data: data as Data))
+                            print("rrrr")
+                            }
+                            
+                        }
+                    }
+                    }
                    
                 }
+                
                 }, withCancel: nil)
         }
     }
 
     
     @IBAction func SaveInfo(_ sender: AnyObject) {
-       let name = NameText.text!
-       let position = Position.text!
-       let skills = Skills.text!
-       let summary = Summary.text!
+        
+        guard let name = NameText.text, let position = Position.text, let skills = Skills.text, let summary = Summary.text else{
+            return
+        }
         //let level = pickerDataSource
-       let uid = FIRAuth.auth()?.currentUser?.uid
-        print("name is:",name,  "pos is:",position, "skil",skills,"sum",summary,"level", pickerDataSource[placement])
+        
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else{
+            return
+        }
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
+        if let uploadData = UIImagePNGRepresentation(self.ProfileImage.image!){
+            storageRef.put(uploadData, metadata: nil, completion:
+                {(metadata,error) in
+                    
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString{
+                        
+                    
+                    let values = ["name": name, "position": position, "skills": skills, "summary": summary, "level": self.pickerDataSource[self.placement], "profileImageUrl": profileImageUrl]
+ 
+                    self.uploadUserData(uid: uid, values: values as [String : AnyObject])
+                    }
+                    
+                    })
+        }
+        
+        
+        
+        
+       
+        
+        
+        
+        
+    }
     
-    
+    private func uploadUserData(uid: String, values: [String: AnyObject]){
         let ref = FIRDatabase.database().reference(fromURL: "https://apartment-management-b3c9b.firebaseio.com/")
-        let userReference = ref.child("user").child(uid!)
-        let values = ["name": name, "position": position, "skills": skills, "summary": summary, "level": pickerDataSource[placement],"profileUrl": metadata.]
+        let userReference = ref.child("user").child(uid)
         userReference.updateChildValues(values, withCompletionBlock: { (err,ref) in
             
             if err != nil{
@@ -174,11 +198,8 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
             
         })
         
-        
-        
+
     }
-    
-    
     
     
     

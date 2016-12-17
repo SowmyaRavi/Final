@@ -16,7 +16,9 @@ class MainScreen: UIViewController {
 
     @IBOutlet weak var LeadingConstraint: NSLayoutConstraint!
     var menuShowing = false
+    var profileImageUrl: String?
     
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var Name: UILabel!
     @IBAction func Logout(_ sender: AnyObject) {
         if FIRAuth.auth()?.currentUser != nil{
@@ -30,6 +32,11 @@ class MainScreen: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+       image.layer.borderWidth = 1
+       image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.black.cgColor
+       image.layer.cornerRadius = image.frame.height/2
+       image.clipsToBounds = true
         checkIfUserLoggedIn()
     }
     
@@ -40,13 +47,34 @@ class MainScreen: UIViewController {
                 
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                    self.Name.text = dictionary["name"] as? String
-                }
+                    let i = dictionary["profileImageUrl"] as? String
+                    if(i != nil){
+                    
+                    let url = NSURL(string: i!)
+                        if let data = NSData(contentsOf: url as! URL){
+                            print("sss")
+                            self.image.image = UIImage(data: data as Data)
+                            print("rrrr")
+                        }
+                        
+                    }
+                    
+                    
+            }
                 
                 
-                }, withCancel: nil)
-        }
+                    
+                    
+                
+               
+                    
+                
+                
+                           }, withCancel: nil)
+            
+            
+                   }
     }
-
       @IBAction func OpenMenu(_ sender: AnyObject) {
         if(menuShowing){
             LeadingConstraint.constant = -140
