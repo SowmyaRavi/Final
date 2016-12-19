@@ -93,7 +93,7 @@ class MentorList: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var viewController = segue
+        //var viewController = segue
         // your new view controller should have property that will store passed value
         
         

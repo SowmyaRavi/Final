@@ -35,8 +35,8 @@ class MainScreen: UIViewController {
        image.layer.borderWidth = 1
        image.layer.masksToBounds = false
         image.layer.borderColor = UIColor.black.cgColor
-       image.layer.cornerRadius = image.frame.height/2
-       image.clipsToBounds = true
+        image.layer.cornerRadius = image.frame.height/2
+        image.clipsToBounds = true
         checkIfUserLoggedIn()
     }
     
@@ -48,21 +48,23 @@ class MainScreen: UIViewController {
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                    self.Name.text = dictionary["name"] as? String
                     let i = dictionary["profileImageUrl"] as? String
-                    if(i != nil){
                     
-                    let url = NSURL(string: i!)
-                        if let data = NSData(contentsOf: url as! URL){
+                    if let url = NSURL(string: i!){
+                        if let data = NSData(contentsOf: url as URL){
                             print("sss")
                             self.image.image = UIImage(data: data as Data)
                             print("rrrr")
                         }
-                        
                     }
                     
                     
             }
                 
                 
+              
+                    
+                    
+                    
                     
                     
                 

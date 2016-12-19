@@ -48,21 +48,22 @@ class MentorDetailView: UIViewController {
                     
                     let email = dictionary["email"] as? String
                     if email != nil{
-                        self.email.text = name
+                        print(email)
+                        self.email.text = email
                     }
 
                    let skills = dictionary["skills"] as? String
                     
                     if skills != nil{
-                        self.skills.text = name
+                        self.skills.text = skills
                     }
                     let position = dictionary["position"] as? String
                     if position != nil{
-                        self.position.text = name
+                        self.position.text = position
                     }
                     let summary = dictionary["summary"] as? String
                     if summary != nil{
-                        self.summary.text = name
+                        self.summary.text = summary
                     }
                     let i = dictionary["profileImageUrl"] as? String
                     if(i != nil){
