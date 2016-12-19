@@ -17,6 +17,7 @@
 		4E83AE171E045FB30027B268 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83AE161E045FB30027B268 /* ProfilePage.swift */; };
 		4E83AE231E04FA300027B268 /* MenteeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83AE221E04FA300027B268 /* MenteeList.swift */; };
 		4E83AE251E04FA480027B268 /* MentorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83AE241E04FA480027B268 /* MentorList.swift */; };
+		4E83AE291E061DFE0027B268 /* MentorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83AE281E061DFE0027B268 /* MentorDetailView.swift */; };
 		4EC5E51A1E01C10A008DF9A5 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5E5191E01C109008DF9A5 /* RegisterScreen.swift */; };
 		4EC5E51C1E022A1D008DF9A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC5E51B1E022A1D008DF9A5 /* Main.storyboard */; };
 		4EE7D00B1E03447B0030D09B /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE7D00A1E03447B0030D09B /* MainScreen.swift */; };
@@ -50,6 +51,7 @@
 		4E83AE161E045FB30027B268 /* ProfilePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		4E83AE221E04FA300027B268 /* MenteeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenteeList.swift; sourceTree = "<group>"; };
 		4E83AE241E04FA480027B268 /* MentorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorList.swift; sourceTree = "<group>"; };
+		4E83AE281E061DFE0027B268 /* MentorDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorDetailView.swift; sourceTree = "<group>"; };
 		4EC5E5191E01C109008DF9A5 /* RegisterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		4EC5E51B1E022A1D008DF9A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4EE7D00A1E03447B0030D09B /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				4E64AB9A1DF740BB0038B4F2 /* Info.plist */,
 				4E83AE221E04FA300027B268 /* MenteeList.swift */,
 				4E83AE241E04FA480027B268 /* MentorList.swift */,
+				4E83AE281E061DFE0027B268 /* MentorDetailView.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				4EC5E51A1E01C10A008DF9A5 /* RegisterScreen.swift in Sources */,
 				4E83AE231E04FA300027B268 /* MenteeList.swift in Sources */,
 				4E83AE171E045FB30027B268 /* ProfilePage.swift in Sources */,
+				4E83AE291E061DFE0027B268 /* MentorDetailView.swift in Sources */,
 				4E83AE251E04FA480027B268 /* MentorList.swift in Sources */,
 				4E64AB911DF740BB0038B4F2 /* ViewController.swift in Sources */,
 				4E64AB8F1DF740BB0038B4F2 /* AppDelegate.swift in Sources */,
