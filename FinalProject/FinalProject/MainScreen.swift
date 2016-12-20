@@ -48,6 +48,7 @@ class MainScreen: UIViewController {
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                    self.Name.text = dictionary["name"] as? String
                     let i = dictionary["profileImageUrl"] as? String
+                    if i != nil{
                     
                     if let url = NSURL(string: i!){
                         if let data = NSData(contentsOf: url as URL){
@@ -56,27 +57,14 @@ class MainScreen: UIViewController {
                             print("rrrr")
                         }
                     }
-                    
-                    
+                }
             }
                 
-                
-              
-                    
-                    
-                    
-                    
-                    
-                
-               
-                    
-                
-                
-                           }, withCancel: nil)
+        }, withCancel: nil)
             
             
-                   }
     }
+}
       @IBAction func OpenMenu(_ sender: AnyObject) {
         if(menuShowing){
             LeadingConstraint.constant = -140

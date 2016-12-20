@@ -38,19 +38,10 @@ class MenteeList: UITableViewController {
                 self.list.insert(MeteeLis(name:name, email: email, uid: uid), at: 0)
                 self.tableView.reloadData()
                 
-                
             }
             print("fetched")
             print(snapshot)
-            
-            
-            
-            
-            
-            
-            
-            
-            }, withCancel: nil)
+        }, withCancel: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,9 +67,6 @@ class MenteeList: UITableViewController {
         let label3 = cell?.viewWithTag(3)  as! UILabel
         label3.text = list[indexPath.row].uid
         
-        
-        
-        
         return cell!
     }
     
@@ -90,7 +78,6 @@ class MenteeList: UITableViewController {
         label = label1.text!
         print(label)
         performSegue(withIdentifier: "mentee", sender: self)
-        
         
     }
     

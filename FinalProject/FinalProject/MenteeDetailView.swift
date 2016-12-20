@@ -12,22 +12,11 @@ import Firebase
 class MenteeDetailView: UIViewController {
     
     var text:String?
-    
     @IBOutlet weak var picture: UIImageView!
-    
-    
     @IBOutlet weak var name: UILabel!
-    
     @IBOutlet weak var email: UILabel!
-    
-    
     @IBOutlet weak var position: UILabel!
-    
-    
     @IBOutlet weak var skills: UITextView!
-    
-    
-   
     @IBOutlet weak var summary: UITextView!
     
     
@@ -81,10 +70,7 @@ class MenteeDetailView: UIViewController {
                     }
                     
                 }
-                
             }
-            
-            
             }, withCancel: nil)
         
 }

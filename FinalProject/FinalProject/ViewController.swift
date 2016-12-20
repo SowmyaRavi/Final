@@ -21,9 +21,10 @@ class ViewController: UIViewController {
               
         
     }
+    
     @IBAction func SignInButton(_ sender: AnyObject) {
-        guard let email = NameTextField.text, let password = PasswordTextField.text else{
-            self.view.makeToast("Please fill in all fields")
+        guard let email = NameTextField.text, let password = PasswordTextField.text, !email.isEmpty, !password.isEmpty else{
+            self.view.makeToast("Please input all fields")
              print("please fill in fields")
             return
         }
@@ -39,7 +40,6 @@ class ViewController: UIViewController {
             }
         })
     }
-    
    
         
     override func viewDidLoad() {
@@ -47,8 +47,6 @@ class ViewController: UIViewController {
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "hideKeyboard")
        tapGesture.cancelsTouchesInView = false
         UIView.addGestureRecognizer(tapGesture)
-
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
    func hideKeyboard(){

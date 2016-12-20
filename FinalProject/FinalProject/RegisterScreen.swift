@@ -37,10 +37,10 @@ class RegisterScreen: UIViewController {
     }
     
     @IBAction func SignUpButton(_ sender: AnyObject) {
-        guard let email = Email.text, let password = Password.text, let name = Name.text else {
-            self.view.makeToast("Please fill all fields")
+        guard let email = Email.text, let password = Password.text, let name = Name.text, !email.isEmpty, !password.isEmpty, !name.isEmpty else {
+            self.view.makeToast("Please input all fields")
             print("please input fields")
-           return
+            return
         }
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user : FIRUser?, error) in
@@ -63,15 +63,12 @@ class RegisterScreen: UIViewController {
                         return
                     }
                     self.view.makeToast("Account Created Now you can login")
+                   self.Name.text = nil
+                   self.Password.text = nil
+                   self.Email.text = nil
+                    
                   print("successfully inserted")
-                
-                
-                
-                
                 })
-                
-                
-                
             }
             
         })

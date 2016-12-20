@@ -38,9 +38,6 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
         self.PickerUI.dataSource = self
         self.PickerUI.delegate = self
         
-        
-        
-        
         checkIfUserLoggedIn()
         
         let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ProfilePage.hideKeyboard))
@@ -80,20 +77,13 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
             ProfileImage.image = selectedImage
         }
         dismiss(animated: true, completion: nil)
-
-       
-        
     }
     
-
-   
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
        print("cancelled")
         dismiss(animated: true, completion: nil)
     }
-    
-
  
     
     func checkIfUserLoggedIn(){
@@ -128,14 +118,12 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
                             DispatchQueue.global(qos: .userInitiated).async{(self.ProfileImage.image = UIImage(data: data as Data))
                             print("rrrr")
                             }
-                            
+                        }
                         }
                     }
-                    }
-                   
                 }
                 
-                }, withCancel: nil)
+            }, withCancel: nil)
         }
     }
 
@@ -168,17 +156,8 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
                     self.uploadUserData(uid: uid, values: values as [String : AnyObject])
                     }
                     
-                    })
+                })
         }
-        
-        
-        
-        
-       
-        
-        
-        
-        
     }
     
     private func uploadUserData(uid: String, values: [String: AnyObject]){
@@ -192,17 +171,9 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
             }
             self.view.makeToast("Information Updated")
             print("successfully inserted")
-            
-            
-            
-            
         })
         
-
     }
-    
-    
-    
     
     
     func hideKeyboard(){
@@ -238,7 +209,4 @@ class ProfilePage: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         placement = row
     }
-    
-    
-    
-   }
+}

@@ -15,18 +15,11 @@ class MentorDetailView: UIViewController {
     @IBOutlet weak var label1: UILabel!
     var text:String?
     @IBOutlet weak var picture: UIImageView!
-
     @IBOutlet weak var email: UILabel!
-    
     @IBOutlet weak var skills: UITextView!
-    
-        
     @IBOutlet weak var position: UILabel!
-    
     @IBOutlet weak var summary: UITextView!
   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

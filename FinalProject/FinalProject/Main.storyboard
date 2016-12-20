@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kVD-xn-Mnt"/>
                                 </connections>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="2935.1999999999998" y="123.68815592203899"/>
         </scene>
-        <!--Messages-->
+        <!--Let's Connect-->
         <scene sceneID="a11-uN-u8e">
             <objects>
                 <viewController storyboardIdentifier="Main" id="Hxx-Dj-pNl" customClass="MainScreen" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,7 +168,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="GOe-Dm-7Ug"/>
@@ -180,6 +180,17 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="603" id="uzR-WN-nJA"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVj-mG-0ln">
+                                <frame key="frameInset" minX="139" minY="222" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="8lw-Uf-y2i">
+                                <frame key="frameInset" minX="153" minY="251" width="121" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -189,7 +200,7 @@
                             <constraint firstItem="8H5-sO-VQH" firstAttribute="top" secondItem="Mc5-q2-NdL" secondAttribute="bottom" id="l81-Ng-4MA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="n2p-Ca-3vU">
+                    <navigationItem key="navigationItem" title="Let's Connect" id="n2p-Ca-3vU">
                         <barButtonItem key="leftBarButtonItem" image="Menu-50" id="Dii-ks-bEC">
                             <connections>
                                 <action selector="OpenMenu:" destination="Hxx-Dj-pNl" id="mH4-JI-hFy"/>
@@ -277,7 +288,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="KOJ-hD-juP" id="KrG-Ve-aya"/>
                                 </connections>
@@ -287,7 +298,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="KOJ-hD-juP" id="0aj-k1-lqZ"/>
                                 </connections>
@@ -372,7 +383,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjT-BW-pR2">
                                         <constraints>
@@ -393,10 +404,10 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-qW-nmT">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Multiple skills separate by commma" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGz-qW-nmT">
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mcl-oQ-F4H">
                                         <constraints>
@@ -404,7 +415,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3z-hW-r9v">
                                         <rect key="frame" x="10" y="34" width="72" height="21"/>
@@ -424,17 +435,14 @@
                                             <outlet property="delegate" destination="Ohq-Sf-P8I" id="mz6-Up-bV3"/>
                                         </connections>
                                     </pickerView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ogF-i0-TxU">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Q3-Dgv">
+                                        <rect key="frame" x="121" y="-56" width="145" height="92"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="152" id="n6x-dB-naQ"/>
+                                            <constraint firstAttribute="height" constant="75" id="60a-A9-ipD"/>
+                                            <constraint firstAttribute="width" constant="99" id="hux-T9-nxn"/>
+                                            <constraint firstAttribute="width" constant="88" id="u2z-6X-Bav"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="Ohq-Sf-P8I" id="9p2-5o-KeZ"/>
-                                        </connections>
-                                    </textView>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-LE-FSO">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="73" id="Ogo-Pa-JY1"/>
@@ -461,14 +469,18 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Q3-Dgv">
-                                        <rect key="frame" x="121" y="-56" width="145" height="92"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ogF-i0-TxU">
+                                        <rect key="frame" x="8" y="256" width="342" height="152"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="60a-A9-ipD"/>
-                                            <constraint firstAttribute="width" constant="99" id="hux-T9-nxn"/>
-                                            <constraint firstAttribute="width" constant="88" id="u2z-6X-Bav"/>
+                                            <constraint firstAttribute="height" constant="152" id="n6x-dB-naQ"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ohq-Sf-P8I" id="9p2-5o-KeZ"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cGz-qW-nmT" firstAttribute="trailing" secondItem="BMa-Tl-Kj0" secondAttribute="trailing" id="1Xs-Q9-sMy"/>

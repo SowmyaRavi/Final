@@ -31,25 +31,14 @@ class MentorList: UITableViewController {
             
             if let dictionary = snapshot.value as? [String: AnyObject]{
                let uid = snapshot.key
-                let name = dictionary["name"] as! String
-                let email = dictionary["email"] as! String
-                
-                self.list.insert(MetorLis(name:name, email: email, uid: uid), at: 0)
-                self.tableView.reloadData()
-
-                
-            }
+               let name = dictionary["name"] as! String
+               let email = dictionary["email"] as! String
+               self.list.insert(MetorLis(name:name, email: email, uid: uid), at: 0)
+               self.tableView.reloadData()
+                    }
             print("fetched")
             print(snapshot)
-            
-            
-            
-            
-            
-            
-            
-            
-            }, withCancel: nil)
+        }, withCancel: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,10 +63,7 @@ class MentorList: UITableViewController {
         
         let label3 = cell?.viewWithTag(3)  as! UILabel
         label3.text = list[indexPath.row].uid
-        
-
-        
-        
+    
         return cell!
     }
    
@@ -95,7 +81,6 @@ class MentorList: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //var viewController = segue
         // your new view controller should have property that will store passed value
-        
         
         if let destinationVC = segue.destination as? MentorDetailView{
             
